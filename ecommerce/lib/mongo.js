@@ -13,17 +13,18 @@ class MongoLib {
     this.dbName = DB_NAME;
   }
 
-  connect() {
-    return new Promise((resolve, reject) => {
-      this.client.connect(error => {
-        if (error) {
-          reject(error);
-        }
-
+  async connect() {
+    if (!MongoLib.connection) {
+      try {
+        await this.client.connect()
         console.log('Connected successfully to mongo');
-        resolve(this.client.db(this.dbName));
-      });
-    });
+        MongoLib.connection = this.client.db(this.dbName);
+      } catch (error) {
+        console.error(error);
+      }
+    }
+
+    return MongoLib.connection;
   }
 
   getAll(collection, query) {
