@@ -2,6 +2,15 @@ const express = require('express');
 const router = express.Router();
 const ProductsService = require('../../services/products');
 
+const validation = require('../../utils/middlewares/validationHandler');
+
+const {
+  productIdSchema,
+  productTagSchema,
+  createProductSchema,
+  updateProductSchema
+} = require('../../utils/schemas/products');
+
 const productsService = new ProductsService();
 
 router.get('/', async function(req, res, next) {
@@ -34,7 +43,7 @@ router.get('/:productId', async function(req, res, next) {
   }
 });
 
-router.post('/', async function(req, res, next) {
+router.post('/', validation(createProductSchema), async function(req, res, next) {
   const { body: product } = req;
 
   try {
@@ -49,21 +58,26 @@ router.post('/', async function(req, res, next) {
   }
 });
 
-router.put('/:productId', async function(req, res, next) {
-  const { productId } = req.params;
-  const { body: product } = req;
+router.put(
+  '/:productId',
+  validation(productIdSchema, 'params'),
+  validation(updateProductSchema),
+  async function(req, res, next) {
+    const { productId } = req.params;
+    const { body: product } = req;
 
-  try {
-    const updatedProduct = await productsService.updateProduct({ productId, product });
+    try {
+      const updatedProduct = await productsService.updateProduct({ productId, product });
 
-    res.status(200).json({
-      data: updatedProduct,
-      message: 'product updated'
-    });
-  } catch (err) {
-    next(err);
+      res.status(200).json({
+        data: updatedProduct,
+        message: 'product updated'
+      });
+    } catch (err) {
+      next(err);
+    }
   }
-});
+);
 
 router.delete('/:productId', async function(req, res, next) {
   const { productId } = req.params;

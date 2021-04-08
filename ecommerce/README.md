@@ -14,3 +14,5 @@
 - `npm i -S pug`
 - `npm i -S dotenv`
 - `npm i -S mongodb`
+- `npm i -S @hapi/joi`
+- `npm i -S @hapi/boom`
