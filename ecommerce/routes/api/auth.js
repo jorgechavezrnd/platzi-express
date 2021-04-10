@@ -14,6 +14,7 @@ api.post('/token', async function(req, res, next) {
     try {
       if (error || !user) {
         next(boom.unauthorized());
+        return;
       }
 
       req.login(user, { session: false }, async function(error) {
