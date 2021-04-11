@@ -13,8 +13,7 @@ api.post('/token', async function(req, res, next) {
   passport.authenticate('basic', function(error, user) {
     try {
       if (error || !user) {
-        next(boom.unauthorized());
-        return;
+        return next(boom.unauthorized());
       }
 
       req.login(user, { session: false }, async function(error) {
@@ -27,7 +26,7 @@ api.post('/token', async function(req, res, next) {
           expiresIn: '15m'
         });
 
-        return res.status(200).json({ acess_token: token });
+        return res.status(200).json({ access_token: token });
       });
     } catch (error) {
       next(error);
