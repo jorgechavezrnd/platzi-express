@@ -14,6 +14,9 @@
 ## Command for create admin user with seed-admin.js script in scripts/mongo directory
 - `node scripts/mongo/seed-admin.js`
 
+## Command for run tests
+- `npm t`
+
 ## Commands for install dependencies
 - `npm i -S express`
 - `npm i -D nodemon`
@@ -24,3 +27,4 @@
 - `npm i -S @hapi/boom`
 - `npm i -S passport passport-http passport-jwt jsonwebtoken bcrypt`
 - `npm i -D chalk`
+- `npm i -D supertest mocha sinon proxyquire`
