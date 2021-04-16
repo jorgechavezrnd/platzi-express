@@ -3,6 +3,7 @@
 ## References(URLs)
 - Bulma: https://bulma.io/
 - Fontawesome: https://fontawesome.com/
+- Test coverage with nyc: https://github.com/istanbuljs/nyc
 
 ## Command for create mongodb container with docker
 - `docker run -d -p 27017:27017 --name mongodb_platzi_express -e MONGO_INITDB_ROOT_USERNAME=admin -e MONGO_INITDB_ROOT_PASSWORD=p1a7z1 mongo`
@@ -17,6 +18,7 @@
 ## Command for run tests
 - `npm t`
 - For run only a group of tests, use 'describe.only' instead of 'describe' in the test, but don't push the code with 'describe.only'
+- For run test with coverage: `npm run test:cover`
 
 ## Commands for install dependencies
 - `npm i -S express`
@@ -29,3 +31,4 @@
 - `npm i -S passport passport-http passport-jwt jsonwebtoken bcrypt`
 - `npm i -D chalk`
 - `npm i -D supertest mocha sinon proxyquire`
+- `npm i -D nyc`
