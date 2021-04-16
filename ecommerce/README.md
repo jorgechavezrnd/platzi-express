@@ -16,6 +16,7 @@
 
 ## Command for run tests
 - `npm t`
+- For run only a group of tests, use 'describe.only' instead of 'describe' in the test, but don't push the code with 'describe.only'
 
 ## Commands for install dependencies
 - `npm i -S express`
