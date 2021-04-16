@@ -20,6 +20,11 @@
 - For run only a group of tests, use 'describe.only' instead of 'describe' in the test, but don't push the code with 'describe.only'
 - For run test with coverage: `npm run test:cover`
 
+## For inspect ot debug
+- `npm run dev:inspect`
+- Go to chrome http://localhost:8000/products on chrome
+- Open dev tools and click the Node.js icon
+
 ## Commands for install dependencies
 - `npm i -S express`
 - `npm i -D nodemon`
