@@ -28,6 +28,9 @@
 - Go to chrome http://localhost:8000/products on chrome
 - Open dev tools and click the Node.js icon
 
+## For build
+- `npm run build` (This command generates main.min.css in public/assets)
+
 ## Commands for install dependencies
 - `npm i -S express`
 - `npm i -D nodemon`
@@ -40,3 +43,5 @@
 - `npm i -D chalk`
 - `npm i -D supertest mocha sinon proxyquire`
 - `npm i -D nyc`
+- `npm i -D clean-css-cli`
+- `npm install -g win-node-env` (For NODE_ENV variable in package.json, on windows)
