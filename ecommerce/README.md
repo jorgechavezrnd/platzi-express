@@ -33,6 +33,9 @@
 ## For build
 - `npm run build` (This command generates main.min.css in public/assets)
 
+## Detect vulnerabilities
+- `npm audit`
+
 ## Commands for install dependencies
 - `npm i -S express`
 - `npm i -D nodemon`
