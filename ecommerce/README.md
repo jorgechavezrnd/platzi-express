@@ -4,6 +4,8 @@
 - Bulma: https://bulma.io/
 - Fontawesome: https://fontawesome.com/
 - Test coverage with nyc: https://github.com/istanbuljs/nyc
+- Helmet github repository: https://github.com/helmetjs/helmet
+- Helmet website: https://helmetjs.github.io/
 
 ## Command for create mongodb container with docker
 - `docker run -d -p 27017:27017 --name mongodb_platzi_express -e MONGO_INITDB_ROOT_USERNAME=admin -e MONGO_INITDB_ROOT_PASSWORD=p1a7z1 mongo`
@@ -45,3 +47,4 @@
 - `npm i -D nyc`
 - `npm i -D clean-css-cli`
 - `npm install -g win-node-env` (For NODE_ENV variable in package.json, on windows)
+- `npm i -S helmet`
